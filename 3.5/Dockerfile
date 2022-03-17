@@ -1,4 +1,4 @@
-FROM neo4j:4.4
+FROM neo4j:3.5
 MAINTAINER Christopher Mühl "christopher.muehl@hausgold.de"
 
 # Replace the original entrypoint from the official image
