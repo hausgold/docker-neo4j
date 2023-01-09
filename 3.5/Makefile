@@ -58,7 +58,7 @@ publish:
 
 shell:
 	# Start an individual test session of the image
-	@$(DOCKER) run --rm -it "$(IMAGE_NAME):dev" bash
+	@$(DOCKER) run --rm -it -v "`pwd`:/data" "$(IMAGE_NAME):dev" bash
 
 clean:
 	# Clean the current development snapshot

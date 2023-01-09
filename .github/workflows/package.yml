@@ -19,9 +19,10 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - latest
-          - 4.4
-          - 3.5
+          - 'latest'
+          - '5.3'
+          - '4.4'
+          - '3.5'
     steps:
       - name: Prepare the virtual environment
         uses: hausgold/actions/ci@master
