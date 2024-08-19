@@ -40,6 +40,11 @@ neo4j:
   environment:
     # Mind the .local suffix
     - MDNS_HOSTNAME=neo4j.test.local
+    # We allow to start an SSH server inside the container to enable the
+    # programmatically access to neo4j tooling. This is disabled by default.
+    - SSHD_ENABLE=false
+    - SSHD_ROOT_PASSWORD=root
+    - SSHD_CUSTOM_CONIFG=false
   ports:
     # The ports are just for you to know when configure your
     # container links, on depended containers

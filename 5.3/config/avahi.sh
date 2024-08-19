@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 NSS_MDNS=$(dpkg -s libnss-mdns | grep Version: \
   | cut -d: -f2 | cut -d- -f1 | tr -d ' ')

@@ -10,7 +10,8 @@ ENV MDNS_HOSTNAME=neo4j.local
 # Install system packages
 RUN apt-get update -yqqq && \
   apt-get install -y \
-    dbus avahi-daemon avahi-utils libnss-mdns haproxy supervisor
+    dbus avahi-daemon avahi-utils libnss-mdns haproxy supervisor \
+    openssh-server
 
 # Copy custom scripts
 COPY config/*.sh /usr/local/bin/
