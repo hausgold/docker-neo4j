@@ -1,5 +1,5 @@
 FROM neo4j:4.4
-MAINTAINER Christopher Mühl "christopher.muehl@hausgold.de"
+LABEL org.opencontainers.image.authors="containers@hausgold.de"
 
 # Replace the original entrypoint from the official image
 ENTRYPOINT []
@@ -25,4 +25,4 @@ COPY config/supervisor/* /etc/supervisor/conf.d/
 RUN mkdir -p /var/log/supervisor
 
 # Define the command to run per default
-CMD /usr/bin/supervisord -nc /etc/supervisor/supervisord.conf
+CMD ["/usr/bin/supervisord", "-nc", "/etc/supervisor/supervisord.conf"]
