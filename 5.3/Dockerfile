@@ -7,6 +7,13 @@ ENTRYPOINT []
 # You can change this environment variable on run's with -e
 ENV MDNS_HOSTNAME=neo4j.local
 
+# Debian bullseye reached its end of life (2026-08-31) and its packages
+# were moved to the archive mirror, so we point apt there first
+RUN sed -i \
+  -e 's|deb.debian.org/debian-security|archive.debian.org/debian-security|' \
+  -e 's|deb.debian.org/debian|archive.debian.org/debian|' \
+  /etc/apt/sources.list
+
 # Install system packages
 RUN apt-get update -yqqq && \
   apt-get install -y \
